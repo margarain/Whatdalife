@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mrgrttdlrs (Bootstrap)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #f5f5f5;
+        }
+        .profile-pic {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+        }
+        .highlight-circle {
+            width: 66px;
+            height: 66px;
+            border: 1px solid #363636;
+            cursor: pointer;
+        }
+        .highlight-circle i {
+            font-size: 28px;
+        }
+        .nav-tabs {
+            border-bottom: 1px solid #363636;
+        }
+        .nav-tabs .nav-link {
+            border: none;
+            border-top: 1px solid transparent;
+            color: #a8a8a8;
+            font-weight: 600;
+        }
+        .nav-tabs .nav-link.active {
+            background-color: transparent;
+            color: #f5f5f5;
+            border-top: 1px solid #f5f5f5;
+        }
+        .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            isolation: isolate;
+        }
+        .btn-secondary, .btn-secondary:hover {
+            background-color: #363636 !important;
+            border-color: #363636 !important;
+            color: #f5f5f5;
+        }
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            background-color: #1a1a1a;
+        }
+        .gallery-item img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 975px;">
+        <div class="row">
+            <div class="col-12">
+                <header class="d-flex justify-content-between align-items-center p-3">
+                    <h1 class="h4 m-0 fw-bold">mrgrttdlrs</h1>
+                    <div>
+                        <i class="fa-solid fa-plus fs-4 ms-3" onclick="showCreateMenu()" style="cursor: pointer;"></i>
+                        <i class="fa-solid fa-bars fs-4 ms-3" onclick="showSettingsMenu()" style="cursor: pointer;"></i>
+                    </div>
+                </header>
+            </div>
+        </div>
+
+        <div class="row align-items-center p-3">
+            <div class="col-auto">
+                <img src="img/me.jfif" class="rounded-circle profile-pic" alt="Profile Picture">
+            </div>
+            <div class="col">
+                <div class="row text-center">
+                    <div class="col">
+                        <strong class="fs-5 d-block">5</strong>
+                        <span class="text-muted small">posts</span>
+                    </div>
+                    <div class="col">
+                        <strong class="fs-5 d-block">13</strong>
+                        <span class="text-muted small">followers</span>
+                    </div>
+                    <div class="col">
+                        <strong class="fs-5 d-block">20</strong>
+                        <span class="text-muted small">following</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row px-3 pb-3">
+            <div class="col-12">
+                <p class="m-0 fw-bold" id="profileName">margarette Dela rosa</p>
+                <p class="m-0" id="profileBio">FORGET the Mistake REMEMBER the Lesson</p>
+            </div>
+        </div>
+
+        <div class="row px-3 g-2">
+            <div class="col"><button class="btn btn-secondary w-100 fw-bold" onclick="editProfile()">Edit profile</button></div>
+            <div class="col"><button class="btn btn-secondary w-100 fw-bold" onclick="shareProfile()">Share profile</button></div>
+        </div>
+
+        <div class="row p-3">
+            <div class="col-auto">
+                 <div class="text-center" onclick="addNewHighlight()">
+                    <div class="highlight-circle rounded-circle d-flex align-items-center justify-content-center mx-auto">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <p class="m-0 mt-1 small">New</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#me-panel" type="button">Me</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#friends-panel" type="button">Friends</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fun-moments-panel" type="button">Fun Moments</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="me-panel" role="tabpanel">
+                        <div class="row g-1 mt-1">
+                            <div class="col-4"><div class="gallery-item"><img src="img/bored.jfif" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/ewan.jfif" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/gaga.jfif" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/me.jfif" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/yieee.jpg" alt="photo"></div></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="friends-panel" role="tabpanel">
+                        <div class="row g-1 mt-1">
+                           <div class="col-4"><div class="gallery-item"><img src="img/and friends.jpg" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/col-trio.jpg" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/complete.jpg" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/G12.jpg" alt="photo"></div></div>
+                            <div class="col-4"><div class="gallery-item"><img src="img/saya yarn.jpg" alt="photo"></div></div>
+                             <div class="col-4"><div class="gallery-item"><img src="img/smile.jpg" alt="photo"></div></div>
+                              <div class="col-4"><div class="gallery-item"><img src="img/taray pa din.jpg" alt="photo"></div></div>
+                              <div class="col-4"><div class="gallery-item"><img src="img/taray.jpg" alt="photo"></div></div>
+                              <div class="col-4"><div class="gallery-item"><img src="img/team-walter.jfif" alt="photo"></div></div>
+                              <div class="col-4"><div class="gallery-item"><img src="img/Unogang.jfif" alt="photo"></div></div>
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fun-moments-panel" role="tabpanel">
+                        <div class="text-center p-5 text-muted">
+                            <h3 class="text-white">Fun Moments</h3>
+                            <p>Your collection of fun moments and highlights will be displayed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function editProfile() {
+            const nameElement = document.getElementById('profileName');
+            const bioElement = document.getElementById('profileBio');
+            const newName = prompt("Enter your new name:", nameElement.innerText);
+            const newBio = prompt("Enter your new bio:", bioElement.innerText);
+            if (newName !== null && newName.trim() !== "") {
+                nameElement.innerText = newName;
+            }
+            if (newBio !== null && newBio.trim() !== "") {
+                bioElement.innerText = newBio;
+            }
+        }
+        async function shareProfile() {
+            const shareData = {
+                title: 'My Profile',
+                text: 'Check out my profile!',
+                url: window.location.href
+            };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    throw new Error('Web Share API not supported');
+                }
+            } catch (err) {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Share not supported, profile URL copied to clipboard!');
+                });
+            }
+        }
+        function addNewHighlight() {
+            alert('This would open a screen to create a new Story Highlight from your archives.');
+        }
+        function showCreateMenu() {
+            alert('This would open a menu to create a new Post, Reel, Story, or go Live.');
+        }
+        function showSettingsMenu() {
+            alert('This would open the main menu for Settings, Your Activity, Archives, QR Code, and more.');
+        }
+    </script>
+</body>
+</html>
